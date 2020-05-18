@@ -9,25 +9,25 @@
     <?php require 'views/header.php'; ?>
 
     <div id="main">
-        <h1 class="center">Sección de Nuevo</h1>
+        <h1 class="center">Detalle de <?=$this->alumno->matricula; ?></h1>
 
         <div class="center"><?= $this->mensaje; ?></div>
 
-        <form action="<?=constant('URL')?>nuevo/registrarAlumno" method="POST">
+        <form action="<?=constant('URL')?>consulta/actualizarAlumno" method="POST">
             <p>
                 <label for="matricula">Matrícula</label><br>
-                <input type="text" name="matricula" id="" required>
+                <input type="text" name="matricula" value="<?=$this->alumno->matricula; ?>" disabled required>
             </p>
             <p>
                 <label for="nombre">Nombre</label><br>
-                <input type="text" name="nombre" id="" required>
+                <input type="text" name="nombre" value="<?=$this->alumno->nombre; ?>" required>
             </p>
             <p>
                 <label for="apellido">Apellido</label><br>
-                <input type="text" name="apellido" id="" required>
+                <input type="text" name="apellido" value="<?=$this->alumno->apellido; ?>" required>
             </p>
             <p>
-                <input type="submit" value="Registrar nuevo alumno">
+                <input type="submit" value="Actualizar alumno">
             </p>
         </form>
 
